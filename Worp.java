@@ -9,14 +9,27 @@ public class Worp {
     Worp(int num){
         naam="Worp" + num;
     }
-
-    void worpCC (ArrayList<Dice> currentDice) {
+    int[] worpCC (ArrayList<Dice> currentDice) {
 
           for (int i = 0; i < huidigeWorp.length; i++) {
               huidigeWorp[i] = currentDice.get(i).faceUp;
           }
+          int[] CC=huidigeWorp;
+          return CC;
       }
 
+    void printWorpGeschiedenis(ArrayList<Worp> throwHistory){
+        int historyCount=1;
+        for (Worp worp: throwHistory){
+            System.out.print("Worp "+historyCount+": ");
+            historyCount++;
+            for (int i=0; i<5; i++){
+                System.out.print(worp.huidigeWorp[i]);
+            }
+            System.out.println();
+        }
+
+    }
     void worpWeergave (){
 
          String dieTop=" "+"_______"+" ";
